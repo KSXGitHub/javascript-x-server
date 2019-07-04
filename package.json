@@ -15,7 +15,8 @@
     "source-map-support": "^0.3.2",
     "supervisor": "*",
     "websocket": "*",
-    "wolfy-eventemitter": "*"
+    "wolfy-eventemitter": "*",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -36,7 +37,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "supervisor -w proxy.js proxy",
-    "cloc": "cloc --exclude-dir=node_modules,public/lib,fonts,public/fonts,public/xcb ."
+    "cloc": "cloc --exclude-dir=node_modules,public/lib,fonts,public/fonts,public/xcb .",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -48,5 +51,6 @@
   "author": "Greg Miell <greg@tnkd.net>",
   "license": "BSD-2-Clause",
   "gitHead": "b9e6f6729a00444ea0c4988bc33c51bee05f2041",
-  "readmeFilename": "readme.md"
+  "readmeFilename": "readme.md",
+  "snyk": true
 }
